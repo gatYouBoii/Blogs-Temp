@@ -79,9 +79,10 @@
         /* -----------------main section starts------------------ */
         main{
             outline: 2px solid green;
-           min-width: 80%;
+           max-width: 80%;
             padding-top:3%;
             padding-left: 5%;
+
         }      
 
         .hr{
@@ -93,7 +94,49 @@
         h2{
             font-size: 1.6rem;
             font-weight: lighter;
+        }
+        .content p{
+            line-height: 25px;
+            text-align: justify;
+            width: 75%;
+        }
+     
+        .img-section{
+            padding:10px;
+            border-left: 8px solid #63e6b3;
+            background-color: yellow;
+            float: right;
+            margin-left: 30px;
+            margin-right: 20px;
+            width: 15%;
+        }
+        .img-section p{
+            text-align: left;
+            padding:10px;
+            font-size: 0.9em;
+        }
+        .content{
+            min-height: 100vh;
+        }
+        .cards-section{
+            display: flex;
+            flex-direction: row;
+        }
 
+        .cards{
+            padding:10px;
+            flex:30%;
+            height:300px;
+            border-radius: 8px;
+            background-color: #74c0fc;
+            margin-right: 4px;
+            transition: 0.5s;
+        }
+        .cards:nth-child(even){
+            background-color: rgb(101, 230, 181);
+        }
+        .cards:hover{
+            
         }
     </style>
 </head>
@@ -113,6 +156,20 @@
             <h2>Home</h2>
             <br>
             <hr class="hr">
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Placeat tempore, consectetur at quas nulla temporibus beatae sequi veniam tempora possimus quo est, fuga, quod magni explicabo reiciendis magnam dolores nihil impedit expedita adipisci. Delectus, porro facere? Fugit rerum dolorum praesentium velit sequi esse vel, magnam animi! Provident amet sed laborum?</p>
+            <div class="img-section">
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.<br><br> Distinctio, dolorum.Lorem, ipsum dolor sit amet consectetur adipisicing elit. Distinctio, dolorum.</p>
+            </div>
+
+            <h2 style="text-align:center;padding-top:50px">Some Of the content</h2>
+            <!-- ----------cards--------------- -->
+            <div class="cards-section">
+                <div class="cards"></div>
+                <div class="cards"></div>
+                <div class="cards"></div>
+
+            </div>
+
         </div>
         <div class="about content" id="about">
             
