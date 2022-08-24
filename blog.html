@@ -23,15 +23,19 @@
             display: flex;
             flex-direction: row;
             flex-wrap: wrap;
+            justify-content: flex-end;
         }
 
         nav{
-            flex:calc(10% - 100px);
-            outline: 2px solid black;
+            position: fixed;
+            top:0;
+            left:0;
             height:100vh;
+            min-width: 15%;
             display: flex;
-            background-color: azure;
+            background-color: #63e6b3;
             align-items: center;
+            justify-content: flex-start;
         }
         nav ul{
             display: flex;
@@ -63,7 +67,7 @@
             position: absolute;
             width:0;
             transition: 0.5s ease;
-            background-color: blue;
+            background-color: yellow;
             height: 3px;
             bottom:-4px;
             left:16px;
@@ -75,17 +79,22 @@
         /* -----------------main section starts------------------ */
         main{
             outline: 2px solid green;
-            flex: 70%;
+           min-width: 80%;
             padding-top:3%;
             padding-left: 5%;
         }      
 
         .hr{
-            width: 70%;;
+            width: 75%;
             margin:0;
             opacity: .5;
         }
 
+        h2{
+            font-size: 1.6rem;
+            font-weight: lighter;
+
+        }
     </style>
 </head>
 <body>
