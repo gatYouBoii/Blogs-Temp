@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Blog || </title>
+    <script src="https://kit.fontawesome.com/bb489efff3.js"></script>
     <style>
     
     html , body{
@@ -72,17 +73,17 @@
             bottom:-4px;
             left:16px;
         }
-        nav ul li a.active::after, nav ul li a:hover::after{
+         nav ul li a:hover::after{
             width: 60%;
         }
 
         /* -----------------main section starts------------------ */
         main{
-            outline: 2px solid green;
-           max-width: 80%;
+            /* outline: 2px solid green; */
+           max-width: 85%;
             padding-top:3%;
             padding-left: 5%;
-
+            
         }      
 
         .hr{
@@ -92,11 +93,12 @@
         }
 
         h2{
-            font-size: 1.6rem;
+            font-size: 1.7em;
             font-weight: lighter;
         }
         .content p{
             line-height: 25px;
+            font-size: 1.2rem;
             text-align: justify;
             width: 75%;
         }
@@ -110,9 +112,15 @@
             margin-right: 20px;
             width: 15%;
         }
+        .img-section::after{
+            content: '';
+            display: table;
+            clear: both;
+        }
         .img-section p{
             text-align: left;
             padding:10px;
+            width:200px;
             font-size: 0.9em;
         }
         .content{
@@ -126,27 +134,75 @@
         .cards{
             padding:10px;
             flex:30%;
-            height:300px;
+            height:auto;
             border-radius: 8px;
             background-color: #74c0fc;
-            margin-right: 4px;
+            margin-right: 8px;
+            position: relative;
+            cursor: pointer;
             transition: 0.5s;
         }
         .cards:nth-child(even){
             background-color: rgb(101, 230, 181);
         }
         .cards:hover{
-            
+        box-shadow: 2px 9px 5px rgba(0,0,0,0.3);
+        }
+        .cards p{
+            padding:35px;
+            font-size: 1rem;
+            transition: 0.5s;
+            text-align: center;
+        }
+
+        .content:nth-child(even){
+            background-color: #63e6b3;
+        }
+        .blog-content{
+            padding:3%;
+        }
+        .articles{
+            padding:8px 10px;
+            background-color: #74c0fc;
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin-bottom:30px;
+            position: relative;
+            padding-bottom: 50px;
+        }
+        .articles-content{
+            padding:10px;
+            background-color: #f1f1f1;
+            border-radius: 8px;
+            margin-bottom:20px;
+            font-weight: lighter;
+        }
+        .articles-content p{
+            display: inline-block;
+            width: 100%;
+        }
+        
+        .readMore{
+            background-color: yellow;
+            display: inline-block;
+            padding:10px;
+            cursor: pointer;
+        }
+        .contact{
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
     </style>
 </head>
 <body>
     <nav>
         <ul>
-            <li><a href="#" class="active">Home</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Contact</a></li>
-            <li><a href="#">Projects</a></li>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#blogs">Blogs</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="#projects">Projects</a></li>
         </ul>
     </nav>
     
@@ -161,21 +217,68 @@
                 <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.<br><br> Distinctio, dolorum.Lorem, ipsum dolor sit amet consectetur adipisicing elit. Distinctio, dolorum.</p>
             </div>
 
-            <h2 style="text-align:center;padding-top:50px">Some Of the content</h2>
+            <h2 style="text-align:center;padding-top:50px; margin-top:70px;" >Some Of the content</h2>
             <!-- ----------cards--------------- -->
             <div class="cards-section">
-                <div class="cards"></div>
-                <div class="cards"></div>
-                <div class="cards"></div>
+                <div class="cards">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit modi accusantium corporis libero et nesciunt quidem cupiditate amet sit dicta nemo praesentium labore ut necessitatibus, reiciendis explicabo, porro quas unde.</p>
+                </div>
+                <div class="cards">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit modi accusantium corporis libero et nesciunt quidem cupiditate amet sit dicta nemo praesentium labore ut necessitatibus, reiciendis explicabo, porro quas unde.</p>
+                </div>
+                 <div class="cards">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit modi accusantium corporis libero et nesciunt quidem cupiditate amet sit dicta nemo praesentium labore ut necessitatibus, reiciendis explicabo, porro quas unde.</p>
+                </div>
+            
+                
+            </div>
+            <p>Some content</p>
+            <p>This is a simple website demonstarting about the webstite content and the structure. 
+                <span>Feel Free to add any Changes</span>
+                <br><br>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo, animi.
+                Lorem, ipsum. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eaque ut ducimus atque natus aut voluptas mollitia, officia deleniti magnam voluptatem.
+            </p>
+            <hr class="hr" style="margin-top:40px;">
+        </div>
+        <div class="about content" id="blogs">
+            <div class="blog-content">
+                <h2>Blogs</h2>
+                <div class="articles">
+                    <h2>How to Make a Website?</h2>
+                    <div class="articles-content">
+                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Architecto repudiandae distinctio quam repellendus dolore laboriosam explicabo modi quae, deserunt incidunt?...</p>
+                        <div class="readMore">Read More</div>
+                    </div>
+                   
+                </div>
+                <div class="articles">
+                    <h2>How to Do Something Great</h2>
+                    <div class="articles-content">
+                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Architecto repudiandae distinctio quam repellendus dolore laboriosam explicabo modi quae, deserunt incidunt?...</p>
+                        <div class="readMore">Read More</div>
+                    </div>
+                   
+                </div>
+                <div class="articles">
+                    <h2>How to apply changes to CSS</h2>
+                    <div class="articles-content">
+                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Architecto repudiandae distinctio quam repellendus dolore laboriosam explicabo modi quae, deserunt incidunt?...</p>
+                        <div class="readMore" >Read More</div>
+                    </div>
+                   
+                </div>
+               
 
             </div>
-
-        </div>
-        <div class="about content" id="about">
-            
         </div>
         <div class="contact content" id="contact">
-            
+                <h2>Follow us on -</h2>
+                <i class="fa-brands fa-instagram"></i>
+                <i class="fa-brands fa-youtube"></i>
+                <i class="fa-brands fa-twitter"></i>
+                <i class="fa-brands fa-facebook"></i>
+                <i class="fa-brands fa-google-plus-g"></i>
         </div>
         <div class="projects content" id="projects">
             
@@ -183,8 +286,6 @@
 
     </main>
     
-    <script>
-       
-    </script>
+
 </body>
 </html>
