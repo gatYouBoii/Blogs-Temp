@@ -191,9 +191,45 @@
         }
         .contact{
             display: flex;
-            align-items: center;
             justify-content: center;
+            align-items: center;
         }
+        .follow-section{
+            padding:30px;
+        }
+        .follow-section i{
+            font-size: 2.2rem;
+            padding:20px;
+            text-align:center;
+            transition:all 0.5s;
+            cursor: pointer;
+        }
+      
+
+        /* .follow-sections .instagram:hover{
+            background: #f09433; 
+background-image: -moz-linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); 
+background-image: -webkit-linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%); 
+background-image: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%); 
+        } */
+        .fa-instagram:hover{
+           
+background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%); 
+        }
+        .fa-youtube:hover{
+            background-color: #FF0000;
+
+        }
+        .fa-twitter:hover{
+            background-color: #1DA1F2;
+        }
+        .fa-facebook:hover{
+            background-color:#4267B2;
+        }
+        .fa-google-plus-g:hover{
+            background-color: #DD4B39;
+        }
+     
     </style>
 </head>
 <body>
@@ -274,11 +310,13 @@
         </div>
         <div class="contact content" id="contact">
                 <h2>Follow us on -</h2>
+                <div class="follow-section">
                 <i class="fa-brands fa-instagram"></i>
-                <i class="fa-brands fa-youtube"></i>
-                <i class="fa-brands fa-twitter"></i>
-                <i class="fa-brands fa-facebook"></i>
+                <i class="fa-brands fa-youtube" ></i>
+                <i class="fa-brands fa-twitter" ></i>
+                <i class="fa-brands fa-facebook" ></i>
                 <i class="fa-brands fa-google-plus-g"></i>
+            </div>
         </div>
         <div class="projects content" id="projects">
             
