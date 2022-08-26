@@ -9,7 +9,7 @@
     <style>
     
     html , body{
-        width: 100;
+        width: 100%;
         height: 100%;
         box-sizing: border-box;
         scroll-behavior: smooth;
@@ -21,23 +21,45 @@
             background-color: aliceblue;
             color:black;
             transition:0.5s;
-            display: flex;
-            flex-direction: row;
-            flex-wrap: wrap;
-            justify-content: flex-end;
+            
+        }
+        .fa-bars{
+            padding:10px;
+            font-size: 2em;
+            position: fixed;
+            top:3px;
+            transition: 0.5s;
+            cursor: pointer;
+            z-index: 20;
+        }
+
+        .fa-bars:hover{
+            background-color: #1DA1F2;
         }
 
         nav{
             position: fixed;
             top:0;
             left:0;
-            height:100vh;
-            min-width: 15%;
+            min-height:100%;
+            z-index: 30;
             display: flex;
+            transition: 0.5s;
             background-color: #63e6b3;
             align-items: center;
             justify-content: flex-start;
+            overflow: hidden;
+            width: 0;
         }
+        .closeButton{
+            position: absolute;
+            top:20px;
+            right:20px;
+            font-size: 2em;
+            cursor: pointer;
+        }
+
+
         nav ul{
             padding:0;
             margin-left:10px;
@@ -80,15 +102,6 @@
             width: 60%;
         }
 
-        /* -----------------main section starts------------------ */
-        main{
-            /* outline: 2px solid green; */
-           max-width: 85%;
-            padding-top:3%;
-            padding-left: 5%;
-            
-        }      
-
         .hr{
             width: 75%;
             margin:0;
@@ -114,7 +127,7 @@
             float: right;
             margin-left: 30px;
             position: absolute;
-            top:20%;
+            top:15%;
             right:0;
             margin-right: 20px;
             transition: 0.5s;
@@ -122,6 +135,11 @@
             width: auto;
 
             
+        }
+
+        .home h2{
+            margin-left: 50px;
+            margin-bottom: 0px;
         }
         .img-section::after{
             content: '';
@@ -145,7 +163,7 @@
         }
 
         .cards{
-            padding:10px;
+            padding:20px;
             flex:33%;
             height:auto;
             border-radius: 8px;
@@ -172,12 +190,15 @@
             background-color: #63e6b3;
         }
         .blog-content{
+            width: 100%;
+            margin: 0;
+            overflow: hidden;
             padding:3%;
         }
         .articles{
             padding:8px 10px;
             background-color: #74c0fc;
-            width: 100%;
+            width: 90%;
             height: auto;
             border-radius: 8px;
             margin-bottom:30px;
@@ -206,6 +227,8 @@
             display: flex;
             justify-content: center;
             align-items: center;
+            flex-direction: column;
+            flex-wrap: wrap;
         }
         .follow-section{
             padding:30px;
@@ -225,6 +248,7 @@
         top:0;
         display: inline-block;
         right:10px;
+        cursor: pointer;
        }
 
 
@@ -261,9 +285,10 @@ background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75
             position: absolute;
             right:0;
             font-size: 20px;
+            cursor: pointer;
             top:30%;
-            background-color: yellow;
             border-radius: 10px;
+            border:1px solid #63e6b3;
             border-left: 5px solid #63e6b3;
             transition:0.5s;
         }
@@ -278,7 +303,14 @@ background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75
            /* 1250 
               1000
            */
-           @media screen and (min-width:1550px) {
+           @media screen and (max-width:1550px) {
+               
+                .img-section{
+                    display: block;
+                }
+               .closeBox{
+                display: none;
+               }
                 .click-box{
                     display: none;
                 }
@@ -291,24 +323,56 @@ background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75
                 .click-box{
                     display: inline-block;
                 }
-                .home-para{
+                .hr{
                     width: 100%;
                 }
+                .home .home-para{
+                    width: 100%;
+                }
+                .closeBox{
+                    display: block;
+                }
+                
 
            }
            @media  screen and (max-width:1000px) {
-                .cards{
-                    width: 100%;
-                }
-                .cards-section{
-                    flex-direction: row;
-                }
+
+              .click-box{
+                top:40%;
+              }
+            
+              .cards-section{
+                display: block;
+                margin-right: 0;
+              }
+              .cards{
+                margin-bottom: 30px;
+                margin-right: 0;
+                padding-right: 0;
+              }
+              main{
+                width: 100%;
+                margin: 0;
+                padding-left: 0;
+              }
+             
+              body{
+                margin: 0;
+                padding: 0;
+
+              }
+            
            }
+
+          
     </style>
 </head>
 <body>
-    <nav>
-        <ul>
+    <i class="fa-solid fa-bars" id="menuButton"></i>
+
+    <nav id="nav">
+        <div class="closeButton" onclick="closeNav()">X</div>
+        <ul> 
             <li><a href="#home">Home</a></li>
             <li><a href="#blogs">Blogs</a></li>
             <li><a href="#contact">Contact</a></li>
@@ -327,13 +391,10 @@ background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75
                 <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.<br><br> Distinctio, dolorum.Lorem, ipsum dolor sit amet consectetur adipisicing elit. Distinctio, dolorum.</p>
                 <div class="closeBox" id="closeBox">X</div>
             </div>
-
             <div class="click-box" id="clickBox">
-                <i class="fa-solid fa-arrow-left"></i>
+                <i class="fa-solid fa-arrow-left"></i><p style="display: inline;">Note</p>
             </div>
-
-            <h2 style="text-align:center;padding-top:50px; margin-top:70px;" >Some Of the content</h2>
-            <!-- ----------cards--------------- -->
+            <h2 style="text-align:center;padding-top:50px; margin-top:70px; width: 100%; margin-left:0;" >Some Of the content</h2>
             <div class="cards-section">
                 <div class="cards">
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit modi accusantium corporis libero et nesciunt quidem cupiditate amet sit dicta nemo praesentium labore ut necessitatibus, reiciendis explicabo, porro quas unde.</p>
@@ -358,6 +419,8 @@ background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75
         </div>
 
         
+
+
         <div class="about content" id="blogs">
             <div class="blog-content">
                 <h2>Blogs</h2>
@@ -389,6 +452,10 @@ background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75
 
             </div>
         </div>
+
+
+
+
         <div class="contact content" id="contact">
                 <h2>Follow us on -</h2>
                 <div class="follow-section">
@@ -399,9 +466,12 @@ background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75
                 <i class="fa-brands fa-google-plus-g"></i>
             </div>
         </div>
+
+
+
+
         <div class="projects content" id="projects">
-                <h2>Comming soon</h2>
-               
+                <h2>Comming soon</h2>   
         </div>
 
     </main>
@@ -411,14 +481,33 @@ background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75
         let imgSec= document.getElementById("imgSec");
 
         clickBox.addEventListener("click",function(){
-                imgSec.style.display="block";
+                if(imgSec.style.display="none"){
+                        imgSec.style.display="block";
+                        this.style.display= "none";
+                }
+                else{
+                    imgSec.style.display="block";
+
+                }
+             
         });
 
         let closeBox = document.getElementById("closeBox");
         closeBox.addEventListener('click',function(){
             imgSec.style.display="none";
+            clickBox.style.display="block";
 
         });
+
+        let menu = document.getElementById("menuButton");
+        let nav = document.getElementById("nav");
+        
+        menu.addEventListener('click',function(){
+                nav.style.width = "250px";
+        });
+        function closeNav(){
+            nav.style.width=null;
+        }
     </script>
     
 
